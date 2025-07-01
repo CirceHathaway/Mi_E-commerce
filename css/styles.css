@@ -1,0 +1,455 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilos del encabezado */
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a.carrito-icono {
+  position: relative;
+}
+
+nav ul li a.carrito-icono #contador-carrito {
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 8px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 0.8rem;
+}
+
+/* Estilos de la sección de productos */
+#contenedor-productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.tarjeta-producto {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  background-color: #fff;
+  transition: box-shadow 0.3s;
+  flex: 1 1 250px;
+  max-width: 300px;
+  cursor: pointer;
+}
+
+.tarjeta-producto:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta-producto img {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.tarjeta-producto h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.tarjeta-producto .descripcion-producto {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 10px 0;
+}
+
+.tarjeta-producto p {
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.tarjeta-producto button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.tarjeta-producto button:hover {
+  background-color: #2980b9;
+}
+
+/* Estilos del carrito */
+#contenedor-carrito {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.tarjeta-carrito {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  background-color: #fff;
+  flex: 1 1 250px;
+  max-width: 300px;
+}
+
+.tarjeta-carrito img {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.tarjeta-carrito h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.tarjeta-carrito .descripcion-carrito {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 10px 0;
+}
+
+.tarjeta-carrito button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.tarjeta-carrito button:hover {
+  background-color: #c0392b;
+}
+
+#resumen-carrito {
+  margin: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+#resumen-carrito p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+#btn-compra {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#btn-compra:hover {
+  background-color: #27ae60;
+}
+
+/* Estilos del modal */
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-contenido {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  text-align: center;
+}
+
+.modal-contenido img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.modal-contenido h2 {
+  margin-bottom: 10px;
+}
+
+.modal-contenido p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.cerrar-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.cerrar-modal:hover {
+  color: #e74c3c;
+}
+
+/* Estilos del pie de página */
+footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 20px;
+}
+
+/* Formulario */
+.contacto-titulo {
+    font-family: "Monoton", sans-serif;
+    font-size: 2rem;
+    color: #d78500;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #2a2929;
+    border: 2px solid #f5a623;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+form label {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+form input, form select, form textarea {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fffef8;
+    color: #222;
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+form button {
+    padding: 0.9rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #f5a623;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    width: 50%;
+}
+
+form button:hover {
+    background-color: #d48806;
+}
+
+/* Estilos de la sección de reseñas */
+#contenedor-reseñas {
+  margin: 2rem auto;
+  padding: 20px;
+  max-width: 1200px;
+}
+
+#contenedor-reseñas h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+#contenedor-reseñas .tarjeta-reseña {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #fff;
+  text-align: center;
+}
+
+#contenedor-reseñas .tarjeta-reseña h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+#contenedor-reseñas .tarjeta-reseña p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+#contenedor-reseñas .tarjeta-reseña .calificacion {
+  font-size: 1rem;
+  color: #f5a623;
+  font-weight: bold;
+}
+
+#contenedor-reseñas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tarjeta-producto, .tarjeta-carrito, .tarjeta-reseña {
+    padding: 10px;
+    flex: 1 1 100%;
+  }
+
+  .tarjeta-producto img, .tarjeta-carrito img {
+    height: 120px;
+  }
+
+  .modal-contenido {
+    width: 95%;
+  }
+
+  .modal-contenido img {
+    height: 150px;
+  }
+
+  #contenedor-reseñas .tarjeta-reseña {
+    grid-column: 1 / -1;
+  }
+
+  /* Ajustes específicos para la sección de contacto en móviles */
+  .contacto-titulo {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  form {
+    padding: 1rem;
+    margin: 1rem;
+    gap: 1rem;
+  }
+
+  form input, form select, form textarea {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  form textarea {
+    min-height: 100px;
+  }
+
+  form button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  #contenedor-reseñas {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  #contenedor-reseñas h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  #contenedor-reseñas .tarjeta-reseña {
+    padding: 10px;
+  }
+
+  #contenedor-reseñas .tarjeta-reseña h3 {
+    font-size: 1rem;
+  }
+
+  #contenedor-reseñas .tarjeta-reseña p {
+    font-size: 0.8rem;
+  }
+
+  #contenedor-reseñas .tarjeta-reseña .calificacion {
+    font-size: 0.9rem;
+  }
+}

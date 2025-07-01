@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="layout">
+        <header>
+            <h1>Mi E-commerce</h1>
+            <nav>
+              <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="./productos.html">Productos</a></li>
+                <li>
+                  <a href="./carrito.html" class="carrito-icono">🛒
+                    <span id="contador-carrito">0</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+        </header>
+
+        <main>
+            <article>
+                <h1 class="contacto-titulo">Comunicate con nosotros</h1>
+            </article>
+            <form action="https://formspree.io/f/mpwdkyyv" method="post">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" required placeholder="Ingresar nombre">
+
+                <label for="apellido">Apellido</label>
+                <input type="text" name="apellido" id="apellido" required placeholder="Ingresar apellido">
+
+                <label for="telefono">Telefono</label>
+                <input type="number" name="telefono" id="telefono" placeholder="Ingresar telefono">
+
+                <label for="correo">Correo</label>
+                <input type="email" name="correo" id="correo" required placeholder="Ingresar correo">
+
+                <br><br>
+                <label for="tema">Motivo de Contacto</label>
+                <select name="tema" id="tema">
+                    <option value="consulta">Consulta</option>
+                    <option value="sugerencia">Sugerencia</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <br><br>
+                <label for="mensaje">Mensaje</label>
+                <textarea name="mensaje" id="mensaje" placeholder="Ingresar mensaje"></textarea>
+
+                <br><br>
+                <button type="submit">Enviar</button>
+            </form>
+
+            <section id="contenedor-reseñas">
+                <h2>Reseñas de Clientes</h2>
+                <div class="tarjeta-reseña">
+                    <h3>María González</h3>
+                    <p>"¡Excelente experiencia de compra! Los productos son de gran calidad y el envío fue rápido."</p>
+                    <p class="calificacion">★★★★★</p>
+                </div>
+                <div class="tarjeta-reseña">
+                    <h3>Juan Pérez</h3>
+                    <p>"Muy buena atención al cliente. Resolvieron mi duda en minutos. ¡Volveré a comprar!"</p>
+                    <p class="calificacion">★★★★☆</p>
+                </div>
+                <div class="tarjeta-reseña">
+                    <h3>Ana López</h3>
+                    <p>"Los precios son competitivos y la página es fácil de usar. Recomiendo esta tienda."</p>
+                    <p class="calificacion">★★★★★</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2025 Mi E-Commerce. Todos los derechos reservados</p>
+        </footer>
+    </div>
+    <script src="./js/contacto.js"></script>
+</body>
+</html>
