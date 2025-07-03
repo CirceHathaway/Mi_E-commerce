@@ -17,16 +17,19 @@ body {
   padding: 20px;
 }
 
-/* Estilos del encabezado */
+/* Encabezado */
 header {
   background-color: #2c3e50;
   color: white;
   padding: 1rem;
   text-align: center;
+  width: 100%; /* Asegura que el header ocupe todo el ancho */
 }
 
 header h1 {
   margin-bottom: 1rem;
+  text-align: left; /* Alinear el h1 al borde izquierdo */
+  padding-left: 1rem; /* Pequeño padding para evitar que toque el borde */
 }
 
 nav ul {
@@ -57,7 +60,11 @@ nav ul li a.carrito-icono #contador-carrito {
   font-size: 0.8rem;
 }
 
-/* Estilos de la sección de productos */
+nav ul li a:hover {
+    color: #d48806;
+}
+
+/* Productos */
 #contenedor-productos {
   display: flex;
   flex-wrap: wrap;
@@ -119,7 +126,7 @@ nav ul li a.carrito-icono #contador-carrito {
   background-color: #2980b9;
 }
 
-/* Estilos del carrito */
+/* Carrito */
 #contenedor-carrito {
   display: flex;
   flex-wrap: wrap;
@@ -192,13 +199,15 @@ nav ul li a.carrito-icono #contador-carrito {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
+  display: block;
+  margin: 0 auto; /* Centrar el botón horizontalmente */
 }
 
 #btn-compra:hover {
   background-color: #27ae60;
 }
 
-/* Estilos del modal */
+/* Ventana de descripción */
 .modal {
   display: flex;
   align-items: center;
@@ -253,13 +262,26 @@ nav ul li a.carrito-icono #contador-carrito {
   color: #e74c3c;
 }
 
-/* Estilos del pie de página */
+/* Pie de página */
 footer {
   background-color: #2c3e50;
   color: white;
   text-align: center;
   padding: 1rem;
   margin-top: 20px;
+  width: 100%; /* Asegura que el footer ocupe todo el ancho */
+}
+
+/* Footer fijo solo para la página del carrito */
+.carrito-page footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+/* Ajuste para evitar que el contenido sea cubierto por el footer fijo */
+.carrito-page .layout {
+  padding-bottom: 60px; /* Ajusta según la altura del footer */
 }
 
 /* Formulario */
@@ -326,7 +348,7 @@ form button:hover {
     background-color: #d48806;
 }
 
-/* Estilos de la sección de reseñas */
+/* Reseñas */
 #contenedor-reseñas {
   margin: 2rem auto;
   padding: 20px;
@@ -400,7 +422,7 @@ form button:hover {
     grid-column: 1 / -1;
   }
 
-  /* Ajustes específicos para la sección de contacto en móviles */
+  /* Sección de contacto en móviles */
   .contacto-titulo {
     font-size: 1.5rem;
     margin: 1rem 0;
@@ -451,5 +473,15 @@ form button:hover {
 
   #contenedor-reseñas .tarjeta-reseña .calificacion {
     font-size: 0.9rem;
+  }
+
+  /* Ajustes para header y footer en móviles */
+  header h1 {
+    padding-left: 0.5rem;
+  }
+
+  /* Ajuste para el footer fijo en móviles */
+  .carrito-page .layout {
+    padding-bottom: 50px; /* Reducir padding en móviles */
   }
 }

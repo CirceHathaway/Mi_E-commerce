@@ -1,40 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Mi E-commerce</title>
-      <link rel="stylesheet" href="./css/styles.css">
-  </head>
-  <body>
-    <div>
-      <header>
-        <h1>Bienvenidos</h1>
-        <nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi E-commerce</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header>
+      <h1>Mi E-commerce</h1>
+      <nav>
           <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="./productos.html">Productos</a></li>
-            <li><a href="./contacto.html">Contacto</a></li>
-            <li>
-              <a href="./carrito.html" class="carrito-icono">🛒
-                <span id="contador-carrito">0</span>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="./productos.html">Productos</a></li>
+              <li><a href="./contacto.html">Contacto</a></li>
+              <li><a href="./carrito.html" class="carrito-icono">🛒
+                  <span id="contador-carrito">0</span>
               </a></li>
           </ul>
-        </nav>
-      </header>
-
-      <main>
+      </nav>
+  </header>
+  
+  <div class="layout">
+    <main>
         <section id="contenedor-productos">
           <h2>Productos destacados</h2>
           <!-- Las tarjetas de producto se van a renderizar aca -->
         </section>
       </main>
+  </div>
 
-      <footer>
-        <p>&copy; 2025 Mi E-Commerce. Todos los derechos reservados</p>
-      </footer>
-    </div>
+    <footer>
+      <p>&copy; 2025 Mi E-Commerce. Todos los derechos reservados a CirceHathaway</p>
+    </footer>
 
     <script src="./js/app.js"></script>
-  </body>
+</body>
 </html>

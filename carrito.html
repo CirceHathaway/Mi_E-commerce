@@ -6,22 +6,22 @@
     <title>Carrito</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body>
-    <div class="layout">
-        <header>
-            <h1>Mi E-commerce</h1>
-            <nav>
-                <ul>
-                    <li><a href="./index.html">Inicio</a></li>
-                    <li><a href="./productos.html">Productos</a></li>
-                    <li><a href="./contacto.html">Contacto</a></li>
-                    <li><a href="./carrito.html" class="carrito-icono">🛒
-                        <span id="contador-carrito">0</span>
-                    </a></li>
-                </ul>
-            </nav>
-        </header>
+<body class="carrito-page">
+    <header>
+        <h1>Mi E-commerce</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./productos.html">Productos</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+                <li><a href="./carrito.html" class="carrito-icono">🛒
+                    <span id="contador-carrito">0</span>
+                </a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <div class="layout">
         <main>
             <h2 class="titulo-carrito">Carrito de compras</h2>
             <section id="contenedor-carrito">
@@ -34,11 +34,12 @@
                 <!-- Aca ira el resumen del carrito -->
             </section>
         </main>
-
-        <footer>
-            <p>&copy; 2025 Mi E-Commerce</p>
-        </footer>
     </div>
+
+    <footer>
+        <p>&copy; 2025 Mi E-Commerce. Todos los derechos reservados a CirceHathaway</p>
+    </footer>
+
     <script src="./js/carrito.js"></script>
 </body>
 </html>

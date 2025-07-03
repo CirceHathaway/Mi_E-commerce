@@ -67,7 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
     resumenCarrito.appendChild(totalImporteElement);
     resumenCarrito.appendChild(btnCompra);
 
-    btnCompra.style.display = "block";
+    // Muestro el botón si el carrito tiene un producto.
+    btnCompra.style.display = carrito.length > 0 ? "block" : "none";
   };
 
   const eliminarProducto = (index) => {
