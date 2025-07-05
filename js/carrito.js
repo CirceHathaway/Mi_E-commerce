@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const contenedorCarrito = document.getElementById("contenedor-carrito");
     contenedorCarrito.innerHTML = "";
 
-    if (carrito.length === 0) {
+    if (!carrito.length) {
       contenedorCarrito.innerHTML = "<p>El carrito está vacío</p>";
     } else {
       carrito.forEach((producto, index) => {
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     resumenCarrito.appendChild(totalImporteElement);
     resumenCarrito.appendChild(btnCompra);
 
-    // Muestro el botón si el carrito tiene un producto.
+    // Muestro el botón "Finalizar Compra" si el carrito tiene un producto.
     btnCompra.style.display = carrito.length > 0 ? "block" : "none";
   };
 
@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       renderCarrito();
       actualizarResumen();
       actualizarContador();
+      window.location.href = "./index.html";
     }
   };
 

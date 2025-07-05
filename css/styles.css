@@ -23,13 +23,13 @@ header {
   color: white;
   padding: 1rem;
   text-align: center;
-  width: 100%; /* Asegura que el header ocupe todo el ancho */
+  width: 100%; 
 }
 
 header h1 {
   margin-bottom: 1rem;
-  text-align: left; /* Alinear el h1 al borde izquierdo */
-  padding-left: 1rem; /* Pequeño padding para evitar que toque el borde */
+  text-align: left; 
+  padding-left: 1rem; 
 }
 
 nav ul {
@@ -200,7 +200,7 @@ nav ul li a:hover {
   cursor: pointer;
   font-size: 1rem;
   display: block;
-  margin: 0 auto; /* Centrar el botón horizontalmente */
+  margin: 0 auto; 
 }
 
 #btn-compra:hover {
@@ -208,7 +208,7 @@ nav ul li a:hover {
 }
 
 /* Ventana de descripción */
-.modal {
+.ventana {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -221,7 +221,7 @@ nav ul li a:hover {
   z-index: 1000;
 }
 
-.modal-contenido {
+.ventana-contenido {
   background-color: white;
   padding: 20px;
   border-radius: 8px;
@@ -231,7 +231,7 @@ nav ul li a:hover {
   text-align: center;
 }
 
-.modal-contenido img {
+.ventana-contenido img {
   max-width: 100%;
   height: 200px;
   object-fit: cover;
@@ -239,17 +239,17 @@ nav ul li a:hover {
   margin-bottom: 15px;
 }
 
-.modal-contenido h2 {
+.ventana-contenido h2 {
   margin-bottom: 10px;
 }
 
-.modal-contenido p {
+.ventana-contenido p {
   margin-bottom: 15px;
   font-size: 1rem;
   color: #333;
 }
 
-.cerrar-modal {
+.cerrar-ventana {
   position: absolute;
   top: 10px;
   right: 15px;
@@ -258,7 +258,7 @@ nav ul li a:hover {
   color: #333;
 }
 
-.cerrar-modal:hover {
+.cerrar-ventana:hover {
   color: #e74c3c;
 }
 
@@ -269,7 +269,21 @@ footer {
   text-align: center;
   padding: 1rem;
   margin-top: 20px;
-  width: 100%; /* Asegura que el footer ocupe todo el ancho */
+  width: 100%;
+}
+
+footer .volver-arriba {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+footer .volver-arriba:hover {
+  color: #d48806;
 }
 
 /* Footer fijo solo para la página del carrito */
@@ -281,7 +295,7 @@ footer {
 
 /* Ajuste para evitar que el contenido sea cubierto por el footer fijo */
 .carrito-page .layout {
-  padding-bottom: 60px; /* Ajusta según la altura del footer */
+  padding-bottom: 60px;
 }
 
 /* Formulario */
@@ -410,11 +424,11 @@ form button:hover {
     height: 120px;
   }
 
-  .modal-contenido {
+  .ventana-contenido {
     width: 95%;
   }
 
-  .modal-contenido img {
+  .ventana-contenido img {
     height: 150px;
   }
 
@@ -422,7 +436,7 @@ form button:hover {
     grid-column: 1 / -1;
   }
 
-  /* Sección de contacto en móviles */
+  /* Sección de contacto en celulares */
   .contacto-titulo {
     font-size: 1.5rem;
     margin: 1rem 0;
@@ -475,13 +489,19 @@ form button:hover {
     font-size: 0.9rem;
   }
 
-  /* Ajustes para header y footer en móviles */
+  /* Ajuste para header*/
   header h1 {
     padding-left: 0.5rem;
   }
 
-  /* Ajuste para el footer fijo en móviles */
+  /* Ajuste para el footer fijo en celulares */
   .carrito-page .layout {
-    padding-bottom: 50px; /* Reducir padding en móviles */
+    padding-bottom: 50px;
+  }
+
+  /* Ajuste para el "Volver arriba" en celulares */
+  footer .volver-arriba {
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
   }
 }

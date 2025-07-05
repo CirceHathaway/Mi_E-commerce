@@ -14,13 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
             //Le doy valor al titulo, precio y boton
             let tarjetaProducto = document.createElement("article");
             tarjetaProducto.classList.add("tarjeta-producto");
-            tarjetaProducto.style.cursor = "pointer"; // Indicar que es clicable
-            tarjetaProducto.addEventListener("click", () => abrirModal(producto));
+            tarjetaProducto.style.cursor = "pointer"; // la tarjeta es clicable
+            tarjetaProducto.addEventListener("click", () => abrirVentana(producto));
 
             let imagenProducto = document.createElement("img");
-            imagenProducto.src = producto.images && producto.images.length > 0 ? 
-              producto.images[0] : "https://via.placeholder.com/150?text=Sin+Imagen";
-            imagenProducto.alt = producto.description || "Sin descripción";
+            imagenProducto.src = producto.images[0];
+            imagenProducto.alt = producto.description;
 
             let tituloProducto = document.createElement("h3");
             tituloProducto.classList.add("titulo-producto");
@@ -28,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let descripcionProducto = document.createElement("p");
             descripcionProducto.classList.add("descripcion-producto");
-            descripcionProducto.textContent = producto.description && producto.description.length > 100 ? 
+            descripcionProducto.textContent = producto.description && producto.description.length > 100 ? //parte de la descripción
               producto.description.substring(0, 100) + "..." : producto.description || "Sin descripción";
 
             let precioProducto = document.createElement("p");
@@ -38,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
             btnAgregar.textContent = "Agregar";
             //Agregamos el evento click que haga push y actualice el contador
             btnAgregar.addEventListener("click", (e) => {
-              e.stopPropagation(); // Evitar que el clic en el botón abra el modal
+              e.stopPropagation(); // Evitar que el clic en el botón abra la ventana
               alert(`${producto.title} agregado al carrito`);
               agregarProducto(producto);
               actualizarAgregados();
@@ -58,22 +57,22 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch((err) => console.error("ERROR: ", err));
   };
 
-  const abrirModal = (producto) => {
-    const modal = document.createElement("div");
-    modal.classList.add("modal");
+  //Ventana para ver la info completa del producto.
+  const abrirVentana = (producto) => {
+    const ventana = document.createElement("div");
+    ventana.classList.add("ventana");
     
-    const modalContenido = document.createElement("div");
-    modalContenido.classList.add("modal-contenido");
+    const ventanaContenido = document.createElement("div");
+    ventanaContenido.classList.add("ventana-contenido");
 
     const cerrarBtn = document.createElement("span");
-    cerrarBtn.classList.add("cerrar-modal");
+    cerrarBtn.classList.add("cerrar-ventana");
     cerrarBtn.innerHTML = "&times;";
-    cerrarBtn.addEventListener("click", () => modal.remove());
+    cerrarBtn.addEventListener("click", () => ventana.remove());
 
     const imagenProducto = document.createElement("img");
-    imagenProducto.src = producto.images && producto.images.length > 0 ? 
-      producto.images[0] : "https://via.placeholder.com/150?text=Sin+Imagen";
-    imagenProducto.alt = producto.description || "Sin descripción";
+    imagenProducto.src = producto.images[0];
+    imagenProducto.alt = producto.description;
 
     const tituloProducto = document.createElement("h2");
     tituloProducto.textContent = producto.title;
@@ -85,17 +84,17 @@ document.addEventListener("DOMContentLoaded", () => {
     precioProducto.textContent = `$${producto.price}`;
     precioProducto.style.fontWeight = "bold";
 
-    modalContenido.appendChild(cerrarBtn);
-    modalContenido.appendChild(imagenProducto);
-    modalContenido.appendChild(tituloProducto);
-    modalContenido.appendChild(descripcionCompleta);
-    modalContenido.appendChild(precioProducto);
-    modal.appendChild(modalContenido);
-    document.body.appendChild(modal);
+    ventanaContenido.appendChild(cerrarBtn);
+    ventanaContenido.appendChild(imagenProducto);
+    ventanaContenido.appendChild(tituloProducto);
+    ventanaContenido.appendChild(descripcionCompleta);
+    ventanaContenido.appendChild(precioProducto);
+    ventana.appendChild(ventanaContenido);
+    document.body.appendChild(ventana);
 
-    // Cerrar modal al hacer clic fuera
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) modal.remove();
+    // Cerrar ventana al hacer clic fuera
+    ventana.addEventListener("click", (e) => {
+      if (e.target === ventana) ventana.remove();
     });
   };
 

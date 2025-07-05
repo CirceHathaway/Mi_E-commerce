@@ -5,7 +5,7 @@
 **Mi E-commerce** es una aplicación web de comercio electrónico que permite a los usuarios explorar productos, añadirlos a un carrito de compras, enviar consultas a través de un formulario de contacto, y ver reseñas de clientes. El proyecto está construido con tecnologías web (HTML, CSS, JavaScript) y utiliza `localStorage` para gestionar el carrito de compras de forma persistente. Los productos se obtienen de la API de DummyJSON, y el formulario de contacto utiliza Formspree para procesar envíos.
 
 ### Características principales
-- **Página de inicio (`index.html`)**: Muestra una lista de productos destacados obtenidos de la API de DummyJSON, con opción de ver detalles en un modal y añadir al carrito.
+- **Página de inicio (`index.html`)**: Muestra una lista de productos destacados obtenidos de la API de DummyJSON, con opción de ver detalles en una ventana y añadir al carrito.
 - **Página de productos (`productos.html`)**: Muestra todos los productos con funcionalidad que la página de inicio.
 - **Página de contacto (`contacto.html`)**: Incluye un formulario para enviar consultas (usando Formspree) y una sección de reseñas de clientes con un diseño responsivo basado en CSS Grid.
 - **Página de carrito (`carrito.html`)**: Muestra los productos añadidos al carrito, permite eliminarlos, y ofrece un botón "Finalizar Compra".
@@ -22,7 +22,7 @@ mi-ecommerce/
 ├── contacto.html       # Página con formulario de contacto y reseñas.
 ├── carrito.html        # Página del carrito de compras.
 ├── js/
-│   ├── app.js          # Lógica para la página de inicio (renderización, carga de productos destacados, modal, agregar producto, actualizar contador).
+│   ├── app.js          # Lógica para la página de inicio (renderización, carga de productos destacados, ventana, agregar producto, actualizar contador).
 │   ├── productos.js    # Lógica para la página de productos (renderización, carga, búsqueda, filtrado, agregar producto, actualizar contador).
 │   ├── contacto.js     # Lógica para actualizar el contador del carrito en contacto.html.
 │   └── carrito.js      # Lógica para gestionar el carrito (renderizado, resumen, eliminación, compra).
@@ -33,7 +33,6 @@ mi-ecommerce/
 
 ## Notas adicionales
 
-- **Imágenes de productos**: Si las imágenes de la API de DummyJSON no cargan, se usa una imagen de respaldo (`https://via.placeholder.com/150?text=Sin+Imagen`). Si persisten problemas, revisa la consola del navegador (F12 → Console) para errores.
 - **Dependencias externas**:
   - API de DummyJSON: `https://dummyjson.com/products`
   - Formspree: `https://formspree.io/f/mpwdkyyv`
